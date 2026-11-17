@@ -1,0 +1,86 @@
+[
+  {
+    "id": "dixit",
+    "name": "Dixit",
+    "min_players": 3,
+    "max_players": 8,
+    "play_time": 30,
+    "complexity": 1,
+    "min_age": 8,
+    "competitive": true,
+    "cooperative": false,
+    "luck": 2,
+    "interaction": 5,
+    "themes": ["fantasy", "creativity"],
+    "mechanics": ["storytelling", "association"],
+    "description": "Gioco di associazione di immagini e immaginazione."
+  },
+
+  {
+    "id": "ticket_to_ride_europe",
+    "name": "Ticket to Ride Europa",
+    "min_players": 2,
+    "max_players": 5,
+    "play_time": 60,
+    "complexity": 2,
+    "min_age": 8,
+    "competitive": true,
+    "cooperative": false,
+    "luck": 2,
+    "interaction": 3,
+    "themes": ["trains", "travel"],
+    "mechanics": ["set collection", "route building"],
+    "description": "Costruisci tratte ferroviarie attraverso l'Europa."
+  },
+
+  {
+    "id": "pandemic",
+    "name": "Pandemic",
+    "min_players": 2,
+    "max_players": 4,
+    "play_time": 45,
+    "complexity": 3,
+    "min_age": 10,
+    "competitive": false,
+    "cooperative": true,
+    "luck": 3,
+    "interaction": 5,
+    "themes": ["health", "science"],
+    "mechanics": ["cooperative", "hand management"],
+    "description": "Squadra cooperativa che combatte pandemie globali."
+  },
+
+  {
+    "id": "root",
+    "name": "Root",
+    "min_players": 2,
+    "max_players": 4,
+    "play_time": 90,
+    "complexity": 5,
+    "min_age": 10,
+    "competitive": true,
+    "cooperative": false,
+    "luck": 2,
+    "interaction": 5,
+    "themes": ["animals", "war"],
+    "mechanics": ["area control", "asymmetric factions"],
+    "description": "Gioco strategico asimmetrico di conquista del bosco."
+  },
+
+  {
+    "id": "heat",
+    "name": "Heat",
+    "min_players": 1,
+    "max_players": 6,
+    "play_time": 60,
+    "complexity": 3,
+    "min_age": 10,
+    "competitive": true,
+    "cooperative": false,
+    "luck": 2,
+    "interaction": 4,
+    "themes": ["racing", "motorsport"],
+    "mechanics": ["hand management", "racing"],
+    "description": "Corse automobilistiche ad alta velocità."
+  }
+]
