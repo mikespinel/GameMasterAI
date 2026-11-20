@@ -3,10 +3,10 @@ from pydantic import BaseModel, Field
 
 class RecommendationRequest(BaseModel):
     players: int = Field(..., ge=1)
-    max_duration: int = Field(..., ge=10)
+    max_duration: int | None = Field(default=None, ge=10)
 
-    complexity_max: int = Field(
-        default=5,
+    complexity_max: int | None = Field(
+        default=None,
         ge=1,
         le=5
     )

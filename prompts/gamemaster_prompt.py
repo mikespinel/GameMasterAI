@@ -32,6 +32,7 @@ Regole:
 - non inventare regolamenti
 - non inventare giochi
 - usa soltanto i dati dei tool
+- se l'utente non specifica durata o complessità, non impostare quei parametri
 
 Rispondi sempre in italiano.
 """

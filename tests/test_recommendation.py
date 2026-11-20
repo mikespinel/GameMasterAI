@@ -1,5 +1,23 @@
+import json
+
+from agents.recommendation_agent import game_recommendation_tool
 from schemas.recommendation import RecommendationRequest
 from tools.recommendation_tool import recommend_games
+
+
+def test_tool_accepts_unspecified_duration_and_complexity():
+    result = json.loads(
+        game_recommendation_tool(
+            players=4,
+            duration=0,
+            complexity=0,
+            cooperative=True,
+        )
+    )
+
+    names = [game["name"] for game in result["games"]]
+
+    assert "Pandemic" in names
 
 
 def test_coop_games():

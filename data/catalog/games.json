@@ -30,7 +30,7 @@
         "cooperative": false,
         "luck": 4,
         "interaction": 5,
-        "themes": ["economy"],
+        "themes": ["economy", "money management"],
         "mechanics": ["roll and move", "trading"],
         "description": "Compra proprietà e manda in bancarotta gli avversari."
     },
@@ -66,7 +66,7 @@
         "cooperative": false,
         "luck": 3,
         "interaction": 2,
-        "themes": ["fantasy", "mythology"],
+        "themes": ["fantasy", "mythology", "dice"],
         "mechanics": ["engine building", "dice crafting"],
         "description": "Migliora i tuoi dadi per ottenere risorse."
     },
@@ -102,7 +102,7 @@
         "cooperative": false,
         "luck": 4,
         "interaction": 4,
-        "themes": ["humor"],
+        "themes": ["humor", "cats"],
         "mechanics": ["take that", "card game"],
         "description": "Sopravvivi evitando i gattini esplosivi."
     },

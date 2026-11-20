@@ -9,8 +9,8 @@ from tools.recommendation_tool import recommend_games
 @tool
 def game_recommendation_tool(
     players: int,
-    duration: int,
-    complexity: int,
+    duration: int | None = None,
+    complexity: int | None = None,
     cooperative: bool | None = None,
     competitive: bool | None = None,
 ):
@@ -20,8 +20,8 @@ def game_recommendation_tool(
 
     request = RecommendationRequest(
         players=players,
-        max_duration=duration,
-        complexity_max=complexity,
+        max_duration=duration or None,
+        complexity_max=complexity or None,
         cooperative=cooperative,
         competitive=competitive,
         min_age=18,

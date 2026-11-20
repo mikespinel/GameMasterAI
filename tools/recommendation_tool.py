@@ -40,17 +40,21 @@ def calculate_score(
 
     score = 5
 
-    if game["play_time"] <= request.max_duration:
+    if (
+        request.max_duration is not None
+        and game["play_time"] <= request.max_duration
+    ):
         score += 3
 
-    complexity_delta = abs(
-        game["complexity"] - request.complexity_max
-    )
+    if request.complexity_max is not None:
+        complexity_delta = abs(
+            game["complexity"] - request.complexity_max
+        )
 
-    score += max(
-        0,
-        3 - complexity_delta
-    )
+        score += max(
+            0,
+            3 - complexity_delta
+        )
 
     return score
 
