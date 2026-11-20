@@ -1,87 +1,20 @@
-import os
+from datapizza.tools import tool
 
-from dotenv import load_dotenv
-
-from datapizza.clients.openai import (
-    OpenAIClient,
+from tools.rulebook_service import (
+    ask_rulebook,
 )
 
-from datapizza.embedders.openai import (
-    OpenAIEmbedder,
-)
 
-from rag.config import (
-    COLLECTION_NAME,
-    EMBEDDING_MODEL,
-)
-
-from rag.qdrant_manager import (
-    ensure_collection,
-)
-
-load_dotenv()
-
-def ask_rulebook(
+@tool
+def rulebook_tool(
     question: str,
-    top_k: int = 5,
 ):
-    embedder = OpenAIEmbedder(
-        api_key=os.getenv("OPENAI_API_KEY"),
-        model_name=EMBEDDING_MODEL,
-    )
-
-    query_vector = embedder.embed(
-        question
-    )
-
-    store = ensure_collection()
-
-    chunks = store.search(
-        collection_name=COLLECTION_NAME,
-        query_vector=query_vector,
-        k=top_k,
-        vector_name="text_embedding",
-    )
-    context = "\n\n".join(
-        chunk.text
-        for chunk in chunks
-    )
-
-    sources = list(
-        {
-            chunk.metadata[
-                "source_file"
-            ]
-            for chunk in chunks
-        }
-    )
-
-    prompt = f"""
-    Rispondi usando ESCLUSIVAMENTE le informazioni presenti nel contesto.
-
-    Se non trovi la risposta:
-    rispondi "Non ho trovato l'informazione nei regolamenti caricati".
-
-    CONTESTO:
-
-    {context}
-
-    DOMANDA:
-
-    {question}
+    """
+    Interroga i regolamenti caricati.
     """
 
-    client = OpenAIClient(
-        api_key=os.getenv(
-            "OPENAI_API_KEY"
-        ),
-        model="gpt-4o-mini",
-    )
-    response = client.invoke(
-        prompt
+    result = ask_rulebook(
+        question=question
     )
 
-    return {
-        "answer": response.content[0].content,
-        "sources": sources,
-    }
+    return str(result)
