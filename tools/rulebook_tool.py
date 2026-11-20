@@ -82,6 +82,6 @@ def ask_rulebook(
     )
 
     return {
-        "answer": response,
+        "answer": response.content[0].content,
         "sources": sources,
     }
