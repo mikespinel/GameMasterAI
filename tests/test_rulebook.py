@@ -1,4 +1,4 @@
-from tools.rulebook_tool import (
+from tools.rulebook_service import (
     ask_rulebook
 )
 

@@ -3,21 +3,19 @@ import os
 from pathlib import Path
 from uuid import uuid4
 
-from dotenv import load_dotenv
-
 from datapizza.embedders.openai import OpenAIEmbedder
 from datapizza.type import (
     Chunk,
     DenseEmbedding,
 )
-
-from rag.pdf_loader import load_pdf_text
-from rag.qdrant_manager import ensure_collection
+from dotenv import load_dotenv
 
 from rag.config import (
     COLLECTION_NAME,
     EMBEDDING_MODEL,
 )
+from rag.pdf_loader import load_pdf_text
+from rag.qdrant_manager import ensure_collection
 
 load_dotenv()
 
